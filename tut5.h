@@ -1,190 +1,210 @@
 #include "complex.h"
 
-/*
-This contains the implementation of the minimal surfaces family from
-http://wordpress.discretization.de/ddg2019 tutorial 5
+/*! \file tut5.h
+    \brief This contains the implementation of the minimal surfaces family.
+
+
+    This contains the implementation of the minimal surfaces family from
+    http://wordpress.discretization.de/ddg2019 tutorial 5.
 */
 
-/* The map rho from http://wordpress.discretization.de/ddg2019 tutorial 5
+/*! \fn float rho(int p)
+    \brief The map \f$\rho\f$ from tutorial 5
 
-Parameters:
-int p: the natural parameter
+    The map \f$\rho\f$ from tutorial 5 of http://wordpress.discretization.de/ddg2019.
 
-Return:
-float: the result of the map rho
+    \param p the natural parameter
+
+    \return the result of the map \f$\rho\f$
 */
 float rho(int p) {
     return (p-1)/float(p);
 }
 
+/*! \fn float rr(int p)
+    \brief The map \f$r\f$ from tutorial 5
 
-/* The map r from http://wordpress.discretization.de/ddg2019 tutorial 5
+    The map \f$r\f$ from tutorial 5 of http://wordpress.discretization.de/ddg2019.
 
-Parameters:
-int p: the natural parameter
+    \param p the natural parameter
 
-Return:
-float: the result of the map r
+    \return the result of the map \f$r\f$
 */
-float r(int p) {
+float rr(int p) {
     return 2 * sqrt(2*p - 1) / (p-1);
 }
 
 
-/* Compute the first component of the map phi from tutorial5
-on http://wordpress.discretization.de/ddg2019
+/*! \fn vector2 phi1(vector2 z; int p)
+    \brief Compute the first component of the map \f$\varphi\f$ from tutorial5
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+    Compute the first component of the map \f$\varphi\f$ from tutorial 5 on
+    http://wordpress.discretization.de/ddg2019.
 
-Return:
-float: the first component of the map phi
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the first component of the map \f$\varphi\f$
 */
 vector2 phi1(vector2 z; int p) {
     return cmul({0, 1}, cpow(z, 2*p -1) - z);
 }
 
-/* Compute the second component of the map phi from tutorial5
-on http://wordpress.discretization.de/ddg2019
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+/*! \fn vector2 phi2(vector2 z; int p)
+    \brief Compute the second component of the map \f$\varphi\f$ from tutorial5
 
-Return:
-float: the second component of the map phi
+    Compute the second component of the map \f$\varphi\f$ from tutorial 5 on
+    http://wordpress.discretization.de/ddg2019.
+
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the second component of the map \f$\varphi\f$
 */
 vector2 phi2(vector2 z; int p) {
     return cpow(z, 2*p - 1) + z;
 }
 
-/* Compute the third component of the map phi from tutorial5
-on http://wordpress.discretization.de/ddg2019
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+/*! \fn vector2 phi3(vector2 z; int p)
+    \brief Compute the third component of the map \f$\varphi\f$ from tutorial5
 
-Return:
-float: the third component of the map phi
+    Compute the third component of the map \f$\varphi\f$ from tutorial 5 on
+    http://wordpress.discretization.de/ddg2019.
+
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the third component of the map \f$\varphi\f$
 */
 vector2 phi3(vector2 z; int p) {
     return cmul({0, 1}, rho(p) * cpow(z, 2*p) + {1, 0});
 }
 
-/* Compute the fourth component of the map phi from tutorial5
-on http://wordpress.discretization.de/ddg2019
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+/*! \fn vector2 phi4(vector2 z; int p)
+    \brief Compute the fourth component of the map \f$\varphi\f$ from tutorial5
 
-Return:
-float: the fourth component of the map phi
+    Compute the fourth component of the map \f$\varphi\f$ from tutorial 5 on
+    http://wordpress.discretization.de/ddg2019.
+
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the fourth component of the map \f$\varphi\f$
 */
 vector2 phi4(vector2 z; int p) {
-    return rho(p) * (r(p) * cpow(z, p) + (cpow(z, 2*p) - {1, 0}));
+    return rho(p) * (rr(p) * cpow(z, p) + (cpow(z, 2*p) - {1, 0}));
 }
 
-/* Compute the fifth component of the map phi from tutorial5
-on http://wordpress.discretization.de/ddg2019
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+/*! \fn vector2 phi5(vector2 z; int p)
+    \brief Compute the fifth component of the map \f$\varphi\f$ from tutorial5
 
-Return:
-float: the fifth component of the map phi
+    Compute the fifth component of the map \f$\varphi\f$ from tutorial 5 on
+    http://wordpress.discretization.de/ddg2019.
+
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the fifth component of the map \f$\varphi\f$
 */
 vector2 phi5(vector2 z; int p) {
-    return rho(p) * (r(p) * cpow(z, p) - (cpow(z, 2*p) - {1, 0}));
+    return rho(p) * (rr(p) * cpow(z, p) - (cpow(z, 2*p) - {1, 0}));
 }
 
 
-/* Compute the fourth component of the map phitilde from tutorial5
-on http://wordpress.discretization.de/ddg2019
+/*! \fn vector2 phitilde4(vector2 z; int p)
+    \brief Compute the fourth component of the map \f$\tilde \varphi\f$ from tutorial 5
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+    Compute the fourth component of the map \f$\tilde \varphi\f$ from tutorial 5
+    on http://wordpress.discretization.de/ddg2019.
 
-Return:
-float: the fourth component of the map phitilde
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the fourth component of the map \f$\tilde \varphi\f$
 */
 vector2 phitilde4(vector2 z; int p) {
     return rho(p) * (cpow(z, 2*p) - {1, 0});
 }
 
-/* Compute the fifth component of the map phitilde from tutorial5
-on http://wordpress.discretization.de/ddg2019
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+/*! \fn vector2 phitilde5(vector2 z; int p)
+    \brief Compute the fifth component of the map \f$\tilde \varphi\f$ from tutorial 5
 
-Return:
-float: the fifth component of the map phitilde
+    Compute the fifth component of the map \f$\tilde \varphi\f$ from tutorial 5
+    on http://wordpress.discretization.de/ddg2019.
+
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the fifth component of the map \f$\tilde \varphi\f$
 */
 vector2 phitilde5(vector2 z; int p) {
-    return rho(p) * r(p) * cpow(z, p);
+    return rho(p) * rr(p) * cpow(z, p);
 }
 
 
-/* Compute the first component of the map phitilde from tutorial5
-on http://wordpress.discretization.de/ddg2019
+/*! \fn vector2 phitilde1(vector2 z; int p)
+    \brief Compute the first component of the map \f$\tilde \varphi\f$ from tutorial 5
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+    Compute the first component of the map \f$\tilde \varphi\f$ from tutorial 5
+    on http://wordpress.discretization.de/ddg2019.
 
-Return:
-float: the first component of the map phitilde
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the first component of the map \f$\tilde \varphi\f$
 */
 vector2 phitilde1(vector2 z; int p) {
     return cdiv(phi1(z, p), phitilde5(z, p) - phitilde4(z, p));
 }
 
 
-/* Compute the second component of the map phitilde from tutorial5
-on http://wordpress.discretization.de/ddg2019
+/*! \fn vector2 phitilde2(vector2 z; int p)
+    \brief Compute the second component of the map \f$\tilde \varphi\f$ from tutorial 5
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+    Compute the second component of the map \f$\tilde \varphi\f$ from tutorial 5
+    on http://wordpress.discretization.de/ddg2019.
 
-Return:
-float: the second component of the map phitilde
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the second component of the map \f$\tilde \varphi\f$
 */
 vector2 phitilde2(vector2 z; int p) {
     return cdiv(phi2(z, p), phitilde5(z, p) - phitilde4(z, p));
 }
 
 
-/* Compute the third component of the map phitilde from tutorial5
-on http://wordpress.discretization.de/ddg2019
+/*! \fn vector2 phitilde3(vector2 z; int p)
+    \brief Compute the third component of the map \f$\tilde \varphi\f$ from tutorial 5
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+    Compute the third component of the map \f$\tilde \varphi\f$ from tutorial 5
+    on http://wordpress.discretization.de/ddg2019.
 
-Return:
-float: the thir  component of the map phitilde
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the third component of the map \f$\tilde \varphi\f$
 */
 vector2 phitilde3(vector2 z; int p) {
     return cdiv(phi3(z, p), phitilde5(z, p) - phitilde4(z, p));
 }
 
 
-/* Compute the map phitilde from tutorial5
-on http://wordpress.discretization.de/ddg2019
+/*! \fn vector phitilde(vector2 z; int p)
+    \brief Compute the map \f$\tilde \varphi\f$ from tutorial 5
 
-Parameters:
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+    Compute the map \f$\tilde \varphi\f$ from tutorial 5 on
+    http://wordpress.discretization.de/ddg2019.
 
-Return:
-float: the result vector of the map phitilde
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the result vector of the map \f$\tilde \varphi\f$
 */
 vector phitilde(vector2 z; int p) {
     return set(real(phitilde1(z, p)), real(phitilde2(z, p)),
@@ -192,16 +212,18 @@ vector phitilde(vector2 z; int p) {
 }
 
 
-/* Compute the associated family of the surface constructed via the map phitilde
-from tutorial5 on http://wordpress.discretization.de/ddg2019.
+/*! \fn vector phitilde_family(vector2 c; vector2 z; int p)
+    \brief Compute the associated family of the surface
 
-Parameters:
-vector2 c: the point on the 1-sphere
-vector2 z: the complex stereographic projection
-int p: the natural parameter in the formula
+    Compute the associated family of the surface constructed via the map
+    \f$\tilde \varphi\f$ from tutorial5 on
+    http://wordpress.discretization.de/ddg2019.
 
-Return:
-float: the result vector
+    \param c the point on the 1-sphere to multiply with \f$\tilde \varphi\f$
+    \param z the complex stereographic projection
+    \param p the natural parameter in the formula
+
+    \return the result vector
 */
 vector phitilde_family(vector2 c; vector2 z; int p) {
     float real_c_phitilde1 = real(cmul(c, phitilde1(z, p)));

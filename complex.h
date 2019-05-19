@@ -1,13 +1,19 @@
-// This contains all basic arithmetic operations for comple numbers.
+/*! \file complex.h
+    \brief This contains all basic arithmetic operations for complex numbers.
 
-/* Multiply two comple numbers
 
-Parameters:
-vector2 z: first complex number
-vector2 w: second complex number
+    This contains all basic arithmetic operations for complex numbers needed to
+    to solve the challenges in http://wordpress.discretization.de/ddg2019.
+*/
 
-Return:
-vector2: product of z and w
+/*! \fn vector2 cmul(vector2 z; vector2 w)
+    \brief Multiply two complex numbers
+
+    Multiply two arbitrary complex numbers.
+
+    \param z first factor
+    \param w second factor
+    \return \f$z \cdot w\f$
 */
 vector2 cmul(vector2 z; vector2 w) {
     float x = z.x;
@@ -20,14 +26,15 @@ vector2 cmul(vector2 z; vector2 w) {
 }
 
 
-/* Divide one complex number by another complex number
+/*! \fn vector2 cdiv(vector2 w; vector2 z)
+    \brief Divide one complex number by another complex number
 
-Parameters:
-vector2 w: divident for the quotient
-vector2 z: divisor for the quotient
+    Divide one arbitrary complex number by another non-zero complex number.
 
-Return:
-vector2: w/z
+    \param w divident
+    \param z divison
+
+    \return \f$\frac{w}{z}\f$
 */
 vector2 cdiv(vector2 w; vector2 z) {
     float x = z.x;
@@ -41,14 +48,15 @@ vector2 cdiv(vector2 w; vector2 z) {
 }
 
 
-/* Give the n-th power of a complex vector
+/*! \fn vector2 cpow(vector2 z; int n)
+    \brief Compute the \f$n\f$-th power of a complex number
 
-Parameters:
-vector2 z: the complex vector
-int n: the exponent
+    Compute the \f$n\f$-th power of a complex number, for \f$n \in N\f$.
 
-Return:
-vector2 - the n-th power of z
+    \param z the complex number
+    \param n the exponent
+
+    \return \f$z^n\f$
 */
 vector2 cpow(vector2 z; int n) {
     float x = z.x;
@@ -59,13 +67,15 @@ vector2 cpow(vector2 z; int n) {
 }
 
 
-/* Give the real part of a complex number
+/*! \fn float real(vector2 z)
+    \brief Give the real part of a complex number
 
-Parameters:
-vector2 z: the complex number of which the real part is needed
+    Give the real part of a complex number represented by the first component
+    of a two element vector.
 
-Return:
-float: the real part of z
+    \param z the complex number
+
+    \return the real part \f$a\f$ of \f$z = a + ib\f$
 */
 float real(vector2 z) {
     return z.x;
