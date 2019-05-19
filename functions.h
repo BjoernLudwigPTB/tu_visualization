@@ -1,13 +1,25 @@
-/* Project c in C to the 1-sphere
+/* Project c in C to the 1-sphere with radius r
 
 Parameters:
-vector c: the vector in C to project to the 1-sphere.
+vector2 c: the direction in C to project to the 1-sphere
 
 Return:
-vector - the projection of c to the 1-sphere
+vector2 - the point on the 1-sphere in direction c
 */
-vector unit_sphere(vector c; float r) {
-    return c / length(c) * r;
+vector2 one_sphere(vector2 z; float r) {
+    return z / length(z) * r;
+}
+
+/* Project z in R to the 2-sphere with radius r
+
+Parameters:
+vector z: the direction in R to project to the 2-sphere
+
+Return:
+vector - the point on the 2-sphere in direction z
+*/
+vector two_sphere(vector z; float r) {
+    return z / length(z) * r;
 }
 
 /* Stereographic projection from S2 into C
