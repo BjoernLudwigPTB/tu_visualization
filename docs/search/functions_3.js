@@ -11,6 +11,5 @@ var searchData=
   ['phitilde3',['phitilde3',['../tut5_8h.html#aaa76059c84163e72044257ab25d2d92a',1,'tut5.h']]],
   ['phitilde4',['phitilde4',['../tut5_8h.html#a0d1e09058661e8d6a2dd357808817325',1,'tut5.h']]],
   ['phitilde5',['phitilde5',['../tut5_8h.html#a93c6a017a84c23f861f49893b1c1e635',1,'tut5.h']]],
-  ['phitilde_5ffamily',['phitilde_family',['../tut6_8h.html#a3db90bd17c97526b2079670714443109',1,'tut6.h']]],
-  ['projections_2eh',['projections.h',['../projections_8h.html',1,'']]]
+  ['phitilde_5ffamily',['phitilde_family',['../tut6_8h.html#a3db90bd17c97526b2079670714443109',1,'tut6.h']]]
 ];

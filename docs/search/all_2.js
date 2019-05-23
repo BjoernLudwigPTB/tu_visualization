@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['real',['real',['../complex_8h.html#a83f3abe7416f3b6a7d3eb0580addb83c',1,'complex.h']]],
-  ['rho',['rho',['../tut5_8h.html#a0f0ee9fde11157a84a3450e68f11e577',1,'tut5.h']]],
-  ['rr',['rr',['../tut5_8h.html#acd48101ff3bb6ce92a071eab50deac46',1,'tut5.h']]]
+  ['gamma',['gamma',['../tut5_8h.html#ad97a049b1c9e37ed23a8cd7ff9998450',1,'tut5.h']]],
+  ['gamma1',['gamma1',['../tut5_8h.html#a4daf48a7a69438b1a0fcb9043399f79b',1,'tut5.h']]],
+  ['gamma2',['gamma2',['../tut5_8h.html#ae31dd332c178d6e9b0f09333523af53f',1,'tut5.h']]],
+  ['gamma3',['gamma3',['../tut5_8h.html#a13d26691d523fe9c18647d874842e126',1,'tut5.h']]]
 ];

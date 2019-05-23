@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "TU Visualization SS2019", "index.html", [
+    [ "TU visualization", "md_README.html", null ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [

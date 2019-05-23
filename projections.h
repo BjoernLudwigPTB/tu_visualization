@@ -1,5 +1,26 @@
 // This contains some basic projections in one- to four-dimensional real space.
 
+/*! \file projections.h
+    \brief Some common projections in discrete differential geometry.
+
+
+    This contains some common projections in discrete differential geometry from
+    http://wordpress.discretization.de/ddg2019.
+*/
+
+/*! \fn vector2 e_to_the_is(float s)
+    \brief Give a point on the one-sphere.
+
+    Give a point on the one-sphere parameterized by \f$s\f$ in the parametric form.
+
+    \param s the real parameter
+
+    \return the point \f$(\cos s, \sin s) \subset C\f$
+*/
+vector2 e_to_the_is(float s) {
+    return set(cos(s), sin(s));
+}
+
 /* Project c in C to the 1-sphere with radius r
 
 Parameters:

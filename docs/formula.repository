@@ -9,3 +9,10 @@
 \form#8:$r$
 \form#9:$\varphi$
 \form#10:$\tilde \varphi$
+\form#11:$(\cos s, \sin s) \subset \mathbb{C}$
+\form#12:$(\cos s, \sin s) \subset C$
+\form#13:$s$
+\form#14:$\gamma$
+\form#15:$c \tilde \varphi$
+\form#16:$c = s e^i$
+\form#17:$t$
