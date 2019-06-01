@@ -11,7 +11,8 @@
 /*! \fn vector2 e_to_the_is(float s)
     \brief Give a point on the one-sphere.
 
-    Give a point on the one-sphere parameterized by \f$s\f$ in the parametric form.
+    Give a point on the one-sphere parameterized by \f$s\f$ in the parametric
+    form.
 
     \param s the real parameter
 
@@ -21,37 +22,43 @@ vector2 e_to_the_is(float s) {
     return set(cos(s), sin(s));
 }
 
-/* Project c in C to the 1-sphere with radius r
+/*! \fn vector2 one_sphere(vector2 z; float r)
+    \brief Project \f$z \in C\f$ to \f$S^1\f$.
 
-Parameters:
-vector2 c: the direction in C to project to the 1-sphere
+    Project \f$z \in C\f$ to \f$S^1\f$ with radius \f$r\f$.
 
-Return:
-vector2 - the point on the 1-sphere in direction c
+    \param z the direction in \f$C\f$ to project to \f$S^1\f$
+    \param r the radius of \f$S^1\f$
+
+    \return the point \f$z \frac{r}{\mid z \mid}\f$
 */
 vector2 one_sphere(vector2 z; float r) {
     return z / length(z) * r;
 }
 
-/* Project z in R to the 2-sphere with radius r
+/*! \fn vector two_sphere(vector z; float r)
+    \brief Project \f$z \in R^3\f$ to \f$S^2\f$.
 
-Parameters:
-vector z: the direction in R to project to the 2-sphere
+    Project \f$z \in R^3\f$ to \f$S^2\f$ with radius \f$r\f$.
 
-Return:
-vector - the point on the 2-sphere in direction z
+    \param z the direction in \f$R^3\f$ to project to \f$S^2\f$
+    \param r the radius of \f$S^2\f$
+
+    \return the point \f$z \frac{r}{\mid z \mid}\f$
 */
 vector two_sphere(vector z; float r) {
     return z / length(z) * r;
 }
 
-/* Stereographic projection from S2 into C
+/*! \fn vector2 stereo2(vector c)
+    \brief Stereographic projection from \f$S^2\f$.
 
-Parameters:
-vector c: the vector in S2 to project to C, must not be {0, 0, 1}
+    Stereographic projection from  \f$S^2\f$ into \f$C\f$.
 
-Return:
-vector2 - the stereographic projection to C
+    \param c the vector in \f$S^2\f$ to project into \f$C\f$, , must not be
+        \f$(0, 0, 1)\top\f$
+
+    \return the stereographic projection to \f$C\f$
 */
 vector2 stereo2(vector c) {
     float x = c.x;
@@ -60,13 +67,14 @@ vector2 stereo2(vector c) {
     return set(x / (1-z), y / (1-z));
 }
 
-/* Stereographic projection from S3 into C
+/*! \fn vector stereo3(vector4 c)
+    \brief Stereographic projection from \f$S^3\f$.
 
-Parameters:
-vector c: the vector in S2 to project to C, must not be {0, 0, 1}
+    Stereographic projection from  \f$S^3\f$ into \f$R^33\f$.
 
-Return:
-vector2 - the stereographic projection to C
+    \param c the vector in \f$S^3\f$ to project into \f$R^3\f$, must not be \f$(0, 0, 0, 1)\top\f$
+
+    \return the stereographic projection to \f$R^3\f$
 */
 vector stereo3(vector4 c) {
     float w = c.w;
@@ -76,15 +84,17 @@ vector stereo3(vector4 c) {
     return set(w / (1-z), x / (1-z), y / (1-z));
 }
 
+/*! \fn vector sphere_inversion(vector z; vector center; float scale)
+    \brief Sphere inversion
 
-/* Sphere inversion
+    Perform a Möbius tranformation to project every point inside the the unit
+    sphere in \f$R^3\f$ to outside and vice versa.
 
-Parameters:
-vector z: the original vvector
-vector center: the center of the sphere
+    \param z the original vector in \f$R^3\f$
+    \param center the center of the sphere
+    \param scale the radius of the sphere
 
-Return:
-vector: the inverted vector
+    \return the inverted vector
 */
 vector sphere_inversion(vector z; vector center; float scale) {
     // Compute translation, then transform in the origin and retranslate

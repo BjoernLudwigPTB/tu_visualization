@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "cegprt",
+  0: "cegoprst",
   1: "cpt",
-  2: "cegpr",
+  2: "cegoprst",
   3: "t"
 };
 
