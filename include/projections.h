@@ -85,10 +85,10 @@ vector stereo3(vector4 c) {
 }
 
 vector stereo3_e4(vector4 c) {
-    return set(c.x, c.y, c.z) / (1-c.w);
+    return set(c.x, c.y, c.z) / (1.-c.w);
 }
 vector stereo3_e4_inv(vector c) {
-    return set(2*c.x, 2*c.y, 2*c.z, length2(c)-1) / (length2(c)+1);;
+    return set(2*c.x, 2*c.y, 2*c.z, length2(c)-1) / (length2(c)+1.);
 }
 
 /*! \fn vector sphere_inversion(vector z; vector center; float scale)
