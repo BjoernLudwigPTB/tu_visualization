@@ -70,6 +70,13 @@ vector stereo3(vector4 c) {
     return set(w / (1-z), x / (1-z), y / (1-z));
 }
 
+vector stereo3_e4(vector4 c) {
+    return set(c.x, c.y, c.z) / (1.-c.w);
+}
+vector stereo3_e4_inv(vector c) {
+    return set(2*c.x, 2*c.y, 2*c.z, length2(c)-1.) / (length2(c)+1.);
+}
+
 /*! \fn vector sphere_inversion(vector z; vector center; float scale)
     \brief Sphere inversion
 
