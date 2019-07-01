@@ -63,16 +63,13 @@ vector2 stereo2(vector c) {
     \return the stereographic projection to \f$R^3\f$
 */
 vector stereo3(vector4 c) {
-    float w = c.w;
     float x = c.x;
     float y = c.y;
     float z = c.z;
-    return set(w / (1-z), x / (1-z), y / (1-z));
+    float w = c.w;
+    return set(x, y, z) / (1.-w);
 }
 
-vector stereo3_e4(vector4 c) {
-    return set(c.x, c.y, c.z) / (1.-c.w);
-}
 vector stereo3_e4_inv(vector c) {
     return set(2*c.x, 2*c.y, 2*c.z, length2(c)-1.) / (length2(c)+1.);
 }
