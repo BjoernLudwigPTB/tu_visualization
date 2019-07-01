@@ -8,20 +8,6 @@
     http://wordpress.discretization.de/ddg2019.
 */
 
-/*! \fn vector2 e_to_the_is(float s)
-    \brief Give a point on the one-sphere.
-
-    Give a point on the one-sphere parameterized by \f$s\f$ in the parametric
-    form.
-
-    \param s the real parameter
-
-    \return the point \f$(\cos s, \sin s) \subset C\f$
-*/
-vector2 e_to_the_is(float s) {
-    return set(cos(s), sin(s));
-}
-
 /*! \fn vector2 one_sphere(vector2 z; float r)
     \brief Project \f$z \in C\f$ to \f$S^1\f$.
 

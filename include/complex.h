@@ -80,3 +80,17 @@ vector2 cpow(vector2 z; int n) {
 float real(vector2 z) {
     return z.x;
 }
+
+/*! \fn vector2 e_to_the_is(float s)
+    \brief Give a point on the one-sphere.
+
+    Give a point on the one-sphere parameterized by \f$s\f$ in the parametric
+    form.
+
+    \param s the real parameter
+
+    \return the point \f$(\cos s, \sin s) \subset C\f$
+*/
+vector2 e_to_the_is(float s) {
+    return set(cos(s), sin(s));
+}
