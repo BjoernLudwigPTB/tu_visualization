@@ -116,6 +116,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a83f3abe7416f3b6a7d3eb0580addb83c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="complex_8h.html#a83f3abe7416f3b6a7d3eb0580addb83c">real</a> (vector2 z)</td></tr>
 <tr class="memdesc:a83f3abe7416f3b6a7d3eb0580addb83c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give the real part of a complex number.  <a href="#a83f3abe7416f3b6a7d3eb0580addb83c">More...</a><br /></td></tr>
 <tr class="separator:a83f3abe7416f3b6a7d3eb0580addb83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1109e743bb10c15d53616f1f0add90d7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="complex_8h.html#a1109e743bb10c15d53616f1f0add90d7">img</a> (vector2 z)</td></tr>
+<tr class="memdesc:a1109e743bb10c15d53616f1f0add90d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give the imaginary part of a complex number.  <a href="#a1109e743bb10c15d53616f1f0add90d7">More...</a><br /></td></tr>
+<tr class="separator:a1109e743bb10c15d53616f1f0add90d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a136cfdba04c9994f2f95868d90e96739"><td class="memItemLeft" align="right" valign="top">vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="complex_8h.html#a136cfdba04c9994f2f95868d90e96739">e_to_the_is</a> (float s)</td></tr>
+<tr class="memdesc:a136cfdba04c9994f2f95868d90e96739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give a point on the one-sphere.  <a href="#a136cfdba04c9994f2f95868d90e96739">More...</a><br /></td></tr>
+<tr class="separator:a136cfdba04c9994f2f95868d90e96739"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This contains all basic arithmetic operations for complex numbers needed to to solve the challenges in <a href="http://wordpress.discretization.de/ddg2019">http://wordpress.discretization.de/ddg2019</a>. </p>
@@ -198,6 +204,58 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><img class="formulaInl" alt="$z^n$" src="form_4.png"/> </dd></dl>
+
+</div>
+</div>
+<a id="a136cfdba04c9994f2f95868d90e96739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a136cfdba04c9994f2f95868d90e96739">&#9670;&nbsp;</a></span>e_to_the_is()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector2 e_to_the_is </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Give a point on the one-sphere parameterized by <img class="formulaInl" alt="$s$" src="form_7.png"/> in the parametric form.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>the real parameter</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the point <img class="formulaInl" alt="$(\cos s, \sin s) \subset C$" src="form_8.png"/> </dd></dl>
+
+</div>
+</div>
+<a id="a1109e743bb10c15d53616f1f0add90d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1109e743bb10c15d53616f1f0add90d7">&#9670;&nbsp;</a></span>img()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float img </td>
+          <td>(</td>
+          <td class="paramtype">vector2&#160;</td>
+          <td class="paramname"><em>z</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Give the imaginary part of a complex number represented by the second component of a two element vector.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">z</td><td>the complex number</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the imaginary part <img class="formulaInl" alt="$b$" src="form_28.png"/> of <img class="formulaInl" alt="$z = a + ib$" src="form_6.png"/> </dd></dl>
 
 </div>
 </div>
