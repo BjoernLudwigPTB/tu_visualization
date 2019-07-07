@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sphere_5finversion',['sphere_inversion',['../projections_8h.html#a771dbfe5b64a9986ee66cf57814ef739',1,'projections.h']]],
-  ['stereo2',['stereo2',['../projections_8h.html#a87ab1a5eb4bf78aa73ffd759c3e46672',1,'projections.h']]],
-  ['stereo3',['stereo3',['../projections_8h.html#a62662f09da77a2b55cdf17d5a8112d58',1,'projections.h']]]
+  ['real',['real',['../complex_8h.html#a83f3abe7416f3b6a7d3eb0580addb83c',1,'complex.h']]],
+  ['rho',['rho',['../tut5_8h.html#a0f0ee9fde11157a84a3450e68f11e577',1,'tut5.h']]],
+  ['rr',['rr',['../tut5_8h.html#acd48101ff3bb6ce92a071eab50deac46',1,'tut5.h']]]
 ];
