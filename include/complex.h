@@ -66,7 +66,6 @@ vector2 cpow(vector2 z; int n) {
     return pow(r, n) * set(cos(n*phi), sin(n*phi));
 }
 
-
 /*! \fn float real(vector2 z)
     \brief Give the real part of a complex number
 
@@ -79,4 +78,32 @@ vector2 cpow(vector2 z; int n) {
 */
 float real(vector2 z) {
     return z.x;
+}
+
+/*! \fn float img(vector2 z)
+    \brief Give the imaginary part of a complex number
+
+    Give the imaginary part of a complex number represented by the second
+    component of a two element vector.
+
+    \param z the complex number
+
+    \return the imaginary part \f$b\f$ of \f$z = a + ib\f$
+*/
+float img(vector2 z) {
+    return z.y;
+}
+
+/*! \fn vector2 e_to_the_is(float s)
+    \brief Give a point on the one-sphere.
+
+    Give a point on the one-sphere parameterized by \f$s\f$ in the parametric
+    form.
+
+    \param s the real parameter
+
+    \return the point \f$(\cos s, \sin s) \subset C\f$
+*/
+vector2 e_to_the_is(float s) {
+    return set(cos(s), sin(s));
 }

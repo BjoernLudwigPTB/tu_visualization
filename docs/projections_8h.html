@@ -94,9 +94,6 @@ $(document).ready(function(){initNavTree('projections_8h.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a136cfdba04c9994f2f95868d90e96739"><td class="memItemLeft" align="right" valign="top">vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="projections_8h.html#a136cfdba04c9994f2f95868d90e96739">e_to_the_is</a> (float s)</td></tr>
-<tr class="memdesc:a136cfdba04c9994f2f95868d90e96739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give a point on the one-sphere.  <a href="#a136cfdba04c9994f2f95868d90e96739">More...</a><br /></td></tr>
-<tr class="separator:a136cfdba04c9994f2f95868d90e96739"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5331ed6aa1dcba1e59ba12db55650a88"><td class="memItemLeft" align="right" valign="top">vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="projections_8h.html#a5331ed6aa1dcba1e59ba12db55650a88">one_sphere</a> (vector2 z;float r)</td></tr>
 <tr class="memdesc:a5331ed6aa1dcba1e59ba12db55650a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project <img class="formulaInl" alt="$z \in C$" src="form_9.png"/> to <img class="formulaInl" alt="$S^1$" src="form_10.png"/>.  <a href="#a5331ed6aa1dcba1e59ba12db55650a88">More...</a><br /></td></tr>
 <tr class="separator:a5331ed6aa1dcba1e59ba12db55650a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,6 +106,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a62662f09da77a2b55cdf17d5a8112d58"><td class="memItemLeft" align="right" valign="top">vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="projections_8h.html#a62662f09da77a2b55cdf17d5a8112d58">stereo3</a> (vector4 c)</td></tr>
 <tr class="memdesc:a62662f09da77a2b55cdf17d5a8112d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stereographic projection from <img class="formulaInl" alt="$S^3$" src="form_18.png"/>.  <a href="#a62662f09da77a2b55cdf17d5a8112d58">More...</a><br /></td></tr>
 <tr class="separator:a62662f09da77a2b55cdf17d5a8112d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebaf45c56228178f85f49aeca0849644"><td class="memItemLeft" align="right" valign="top">vector4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="projections_8h.html#aebaf45c56228178f85f49aeca0849644">stereo3_inv</a> (vector c)</td></tr>
+<tr class="memdesc:aebaf45c56228178f85f49aeca0849644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse of the stereographic projection from <img class="formulaInl" alt="$S^3$" src="form_18.png"/>.  <a href="#aebaf45c56228178f85f49aeca0849644">More...</a><br /></td></tr>
+<tr class="separator:aebaf45c56228178f85f49aeca0849644"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a771dbfe5b64a9986ee66cf57814ef739"><td class="memItemLeft" align="right" valign="top">vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="projections_8h.html#a771dbfe5b64a9986ee66cf57814ef739">sphere_inversion</a> (vector z;vector center;float scale)</td></tr>
 <tr class="memdesc:a771dbfe5b64a9986ee66cf57814ef739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sphere inversion.  <a href="#a771dbfe5b64a9986ee66cf57814ef739">More...</a><br /></td></tr>
 <tr class="separator:a771dbfe5b64a9986ee66cf57814ef739"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,32 +116,6 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This contains some common projections in discrete differential geometry from <a href="http://wordpress.discretization.de/ddg2019">http://wordpress.discretization.de/ddg2019</a>. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a136cfdba04c9994f2f95868d90e96739"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a136cfdba04c9994f2f95868d90e96739">&#9670;&nbsp;</a></span>e_to_the_is()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector2 e_to_the_is </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>s</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Give a point on the one-sphere parameterized by <img class="formulaInl" alt="$s$" src="form_7.png"/> in the parametric form.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">s</td><td>the real parameter</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the point <img class="formulaInl" alt="$(\cos s, \sin s) \subset C$" src="form_8.png"/> </dd></dl>
-
-</div>
-</div>
 <a id="a5331ed6aa1dcba1e59ba12db55650a88"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5331ed6aa1dcba1e59ba12db55650a88">&#9670;&nbsp;</a></span>one_sphere()</h2>
 
@@ -238,7 +212,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Stereographic projection from <img class="formulaInl" alt="$S^3$" src="form_18.png"/> into <img class="formulaInl" alt="$R^33$" src="form_19.png"/>.</p>
+<p>Stereographic projection from <img class="formulaInl" alt="$S^3$" src="form_18.png"/> into <img class="formulaInl" alt="$R^3$" src="form_16.png"/>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>the vector in <img class="formulaInl" alt="$S^3$" src="form_18.png"/> to project into <img class="formulaInl" alt="$R^3$" src="form_16.png"/>, must not be <img class="formulaInl" alt="$(0, 0, 0, 1)\top$" src="form_20.png"/></td></tr>
@@ -246,6 +220,32 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the stereographic projection to <img class="formulaInl" alt="$R^3$" src="form_16.png"/> </dd></dl>
+
+</div>
+</div>
+<a id="aebaf45c56228178f85f49aeca0849644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebaf45c56228178f85f49aeca0849644">&#9670;&nbsp;</a></span>stereo3_inv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector4 stereo3_inv </td>
+          <td>(</td>
+          <td class="paramtype">vector&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Inverse from <img class="formulaInl" alt="$R^3$" src="form_16.png"/> into <img class="formulaInl" alt="$S^3$" src="form_18.png"/> of the stereographic projection.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>the vector in <img class="formulaInl" alt="$R^3$" src="form_16.png"/> to reproject into <img class="formulaInl" alt="$S^3$" src="form_18.png"/>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the projection into <img class="formulaInl" alt="$S^3$" src="form_18.png"/> </dd></dl>
 
 </div>
 </div>
